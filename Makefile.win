@@ -1,0 +1,49 @@
+# Project: Proyecto 2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Civilizacion.o Habitantes.o Aldeano.o Guerrero.o Jinetes.o Arqueros.o Caballeros.o
+LINKOBJ  = main.o Civilizacion.o Habitantes.o Aldeano.o Guerrero.o Jinetes.o Arqueros.o Caballeros.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Proyecto 2.exe"
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Civilizacion.o: Civilizacion.cpp
+	$(CPP) -c Civilizacion.cpp -o Civilizacion.o $(CXXFLAGS)
+
+Habitantes.o: Habitantes.cpp
+	$(CPP) -c Habitantes.cpp -o Habitantes.o $(CXXFLAGS)
+
+Aldeano.o: Aldeano.cpp
+	$(CPP) -c Aldeano.cpp -o Aldeano.o $(CXXFLAGS)
+
+Guerrero.o: Guerrero.cpp
+	$(CPP) -c Guerrero.cpp -o Guerrero.o $(CXXFLAGS)
+
+Jinetes.o: Jinetes.cpp
+	$(CPP) -c Jinetes.cpp -o Jinetes.o $(CXXFLAGS)
+
+Arqueros.o: Arqueros.cpp
+	$(CPP) -c Arqueros.cpp -o Arqueros.o $(CXXFLAGS)
+
+Caballeros.o: Caballeros.cpp
+	$(CPP) -c Caballeros.cpp -o Caballeros.o $(CXXFLAGS)
