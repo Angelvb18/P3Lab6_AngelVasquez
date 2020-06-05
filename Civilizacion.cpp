@@ -11,7 +11,7 @@ Civilizacion::Civilizacion(string nombre)
 	this->alimentos=50;
 	this->oro = 50;
 	this->madera = 50;
-	this->numeroHabitantes=10;
+	this->numeroHabitantes=4;
 	this->casas=2;
 	for(int i = 0 ; i < 5 ; i++){
 		lista.push_back(new Aldeano());
