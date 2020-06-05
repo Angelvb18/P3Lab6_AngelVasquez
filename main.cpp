@@ -10,7 +10,7 @@
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 void menu(int,vector<Civilizacion*>&);
-void guerra(int ,vector<Civilizacion*>& );
+void guerra(Civilizacion*& ,Civilizacion*&);
 int main() {
 	int op = 0;
 	vector<Civilizacion*> ListaCivilizacion;
@@ -127,7 +127,21 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 				break;
 			}
 			case 8:{
-				guerra(posicion,Lista);
+				if(Lista.size() > 1){
+					
+					int posiataque;
+					for(int i ; i < Lista.size() ; i++){
+						cout << i << "." << Lista[i]->getNombre() << endl;
+					}
+					do{
+					cout << "Ingrese a que civilizacion va a ataca:";
+					cin >> posiataque;
+					}while(posiataque > Lista.size() || posiataque < 0);
+					guerra(Lista[posicion],Lista[posiataque]);
+				}else{
+	    			cout << "Solo esta su civilizacion" << endl;
+				}
+			
 				break;
 			}
 			case 9:{	
@@ -224,5 +238,8 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 		}
 	}
 }
-void guerra(int posicion,vector<Civilizacion*>& lista){
+void guerra(Civilizacion*& mia,Civilizacion*& atacada){
+	
+	
+	
 }
