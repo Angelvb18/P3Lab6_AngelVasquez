@@ -3,7 +3,7 @@
 
 #include "Guerrero.h"
 
-class Caballeros:Guerrero
+class Caballeros: public Guerrero
 {
 	public:
 		Caballeros();
