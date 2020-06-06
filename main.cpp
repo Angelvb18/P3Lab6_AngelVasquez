@@ -141,6 +141,7 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 					cin >> posiataque;
 					}while(posiataque > Lista.size() || posiataque < 0);
 					guerra(Lista[posicion]->getHabitantes(),Lista[posiataque]->getHabitantes());
+					
 					if(Lista[posicion]->getHabitantes().size() ==0){
 						cout << "Usted a perdido" << endl;
 							Lista[posicion]->setOro(Lista[posicion]->getOro()-20);
@@ -266,8 +267,8 @@ void guerra(vector<Habitantes*>& mia,vector<Habitantes*>& atacada){
 	char siono;
 	  srand(time (NULL));
 	  int j = 0 + rand()%(atacada.size()-1);
-	
-	for(int i = 0; i < mia.size() ; i++){
+	int i = 0;
+	while(siono !='n' ){
 		if(dynamic_cast<Guerrero*>(mia[i]) != 0){
 			cout << "fsd" << endl;
 			cout << atacada[j]->getVida() << endl;
@@ -290,8 +291,15 @@ void guerra(vector<Habitantes*>& mia,vector<Habitantes*>& atacada){
 		cout << "Ejercito enemigo: "<< atacada.size() << endl;
 		cout << "Desea otro emparejamiento[s/n]" << endl;
 		cin>>siono;
-		if(siono =='n' || siono =='N'){
+		if(siono =='n'){
 			i = mia.size();
 		}
+		if(i == mia.size()){
+			i=0;
+		}
+		if(atacada.size() == 0){
+			siono = n;
+		}
+		i++;
 	}
 }
