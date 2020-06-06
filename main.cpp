@@ -213,7 +213,7 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 				   }
 			   }
 			   for (int i = 0 ; i < preJinetes.size();i ++){
-					if(Lista[posicion]->getMadera() >= 5 && Lista[posicion]->getOro() >= 20 &&Lista[posicion]->getAlimento() >= 75 && Lista[posicion]->getNumeroHabitantes() > 0 && harquero==6 ){
+					if(Lista[posicion]->getMadera() >= 5 && Lista[posicion]->getOro() >= 20 &&Lista[posicion]->getAlimento() >= 75 && Lista[posicion]->getNumeroHabitantes() > 0 && hjinete==6 ){
 					   Lista[posicion]->setHabitante(preJinetes[i]);
 					   preJinetes.erase(preJinetes.begin() + i);
 					   Lista[posicion]->setAlimento(Lista[posicion]->getAlimento()-75);
