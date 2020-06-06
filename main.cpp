@@ -159,7 +159,16 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 			
 				break;
 			}
-			case 9:{	
+			case 9:{
+				int contaldeanos=0;
+				for(int i = 0 ; i < Lista[posicion]->getHabitantes().size() ; i++){
+					if(dynamic_cast<Aldeano*>(Lista[posicion]->getHabitantes()[i]) != 0){
+						contaldeanos++;
+					}
+				}
+				 Lista[posicion]->setAlimento( Lista[posicion]->getAlimento()+(contaldeanos*5));
+				 Lista[posicion]->setOro( Lista[posicion]->getOro()+(contaldeanos*5));	
+				 Lista[posicion]->setMadera( Lista[posicion]->getMadera()+(contaldeanos*5));	
 				if(prearqueros.size() != 0){
 					harquero++;
 				}
