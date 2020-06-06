@@ -141,6 +141,18 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 					cin >> posiataque;
 					}while(posiataque > Lista.size() || posiataque < 0);
 					guerra(Lista[posicion]->getHabitantes(),Lista[posicion]->getHabitantes());
+					if(Lista[posicion]->getHabitantes().size() ==0){
+						cout << "Usted a perdido" << endl;
+							Lista[posicion]->setOro(Lista[posicion]->getOro()-20);
+					}else{
+						if(Lista[posiataque]->getHabitantes().size() == 0){
+							cout << "Felicidades a ganado" << endl;
+							Lista[posicion]->setMadera(Lista[posicion]->getMadera()+100);	
+							Lista[posicion]->setOro(Lista[posicion]->getOro()+100);
+							Lista[posicion]->setAlimento(Lista[posicion]->getAlimento()+100);
+							Lista.erase(Lista.begin() + posiataque);
+						}
+					}
 				}else{
 	    			cout << "Solo esta su civilizacion" << endl;
 				}
