@@ -2,5 +2,6 @@
 Arqueros::Arqueros() : Guerrero(20){
 	
 }
-void Arqueros::atacar(vector<Habitantes*>& atacada){
+void Arqueros::atacar(Habitantes*& atacada){
+		atacada->setVida(atacada->getVida()-ataque + 0.085*vida);
 }

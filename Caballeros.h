@@ -8,7 +8,7 @@ class Caballeros: public Guerrero
 	public:
 		Caballeros();
 		~Caballeros();
-		void atacar(vector<Habitantes*>& atacada);
+		void atacar(Habitantes*& atacada);
 	protected:
 };
 

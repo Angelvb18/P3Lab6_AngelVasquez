@@ -8,6 +8,8 @@
 #include "Caballeros.h"
 #include <vector>
 #include <typeinfo>
+# include <stdlib.h>
+# include <time.h>
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 void menu(int,vector<Civilizacion*>&);
@@ -240,9 +242,29 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 	}
 }
 void guerra(vector<Habitantes*>& mia,vector<Habitantes*>& atacada){
+	char siono;
+	  srand(time (NULL));
+	  int j = 0 + rand()%(atacada.size()-1);
 	for(int i = 0; i < mia.size() ; i++){
 		if(dynamic_cast<Guerrero*>(mia[i]) != 0){
-			dynamic_cast<Guerrero*>(mia[i])->atacar(atacada);
+			dynamic_cast<Guerrero*>(mia[i])->atacar(atacada[j]);
+			if(atacada[j] <=0){
+				atacada.erase(atacada.begin() + j);
+			}else{
+				if(dynamic_cast<Guerrero*>(atacada[j]) != 0){
+					dynamic_cast<Guerrero*>(atacada[j])->atacar(mia[i]);
+				}
+				if(mia[i] <=0){
+					mia.erase(mia.begin() + i);
+				}
+			}
+		}
+		cout << "Mi ejercito :" << mia.size() << endl;
+		cout << "Ejercito enemigo: "<< atacada.size() << endl;
+		cout << "Desea otro emparejamiento[s/n]" << endl;
+		cin>>siono;
+		if(siono =='n' || siono =='N'){
+			i = mia.size();
 		}
 	}
 }

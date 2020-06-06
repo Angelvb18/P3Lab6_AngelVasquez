@@ -7,8 +7,8 @@ class Guerrero : public Habitantes
 	public:
 		Guerrero(int);
 		Guerrero();
-		~Guerrero()
-		virtual void atacar(vector<Habitantes*>& atacada);
+		//~Guerrero();
+		virtual void atacar(Habitantes*& atacada);
 		void setAtaque(int);
 		int getAtaque();
 	protected:

@@ -5,7 +5,7 @@ class Arqueros : public Guerrero
 {
 	public:
 		Arqueros();
-		void atacar(vector<Habitantes*>& atacada);
+		void atacar(Habitantes*& atacada);
 	protected:
 };
 
