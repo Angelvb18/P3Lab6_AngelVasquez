@@ -8,3 +8,5 @@ void Habitantes::setVida(int vida){
 int Habitantes::getVida(){
 	return vida;
 }
+Habitantes::~Habitantes(){
+}

@@ -5,6 +5,8 @@ class Aldeano : public Habitantes
 {
 	public:
 		Aldeano();
+		~Aldeano()
+	//	void atacar(vector<Habitantes*>& atacada);
 	protected:
 };
 

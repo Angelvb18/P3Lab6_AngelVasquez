@@ -71,7 +71,7 @@ int Civilizacion::getCuarteles(){
 int Civilizacion::getEstablos(){
 	return establos;
 }
-vector<Habitantes*> Civilizacion::getHabitantes(){
+vector<Habitantes*>& Civilizacion::getHabitantes(){
 	return lista;
 }
 void Civilizacion::setHabitante(Habitantes* nuevo){

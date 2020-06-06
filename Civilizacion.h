@@ -28,7 +28,7 @@ class Civilizacion
 		int getCasas();
 		int getCuarteles();
 		int getEstablos();
-		vector<Habitantes*> getHabitantes();
+		vector<Habitantes*>& getHabitantes();
 		void setHabitante(Habitantes*);
 		void setHabitante(int);
 	protected:

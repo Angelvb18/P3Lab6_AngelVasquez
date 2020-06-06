@@ -6,7 +6,7 @@ class Jinetes : public Guerrero
 	public:
 		Jinetes();
 		~Jinetes();
-		void atacar();
+		void atacar(vector<Habitantes*>& atacada);
 	protected:
 };
 

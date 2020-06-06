@@ -7,10 +7,11 @@
 #include "Arqueros.h"
 #include "Caballeros.h"
 #include <vector>
+#include <typeinfo>
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 void menu(int,vector<Civilizacion*>&);
-void guerra(Civilizacion*& ,Civilizacion*&);
+void guerra(vector<Habitantes*>& ,vector<Habitantes*>&);
 int main() {
 	int op = 0;
 	vector<Civilizacion*> ListaCivilizacion;
@@ -137,7 +138,7 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 					cout << "Ingrese a que civilizacion va a ataca:";
 					cin >> posiataque;
 					}while(posiataque > Lista.size() || posiataque < 0);
-					guerra(Lista[posicion],Lista[posiataque]);
+					guerra(Lista[posicion]->getHabitantes(),Lista[posicion]->getHabitantes());
 				}else{
 	    			cout << "Solo esta su civilizacion" << endl;
 				}
@@ -238,8 +239,10 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 		}
 	}
 }
-void guerra(Civilizacion*& mia,Civilizacion*& atacada){
-	
-	
-	
+void guerra(vector<Habitantes*>& mia,vector<Habitantes*>& atacada){
+	for(int i = 0; i < mia.size() ; i++){
+		if(dynamic_cast<Guerrero*>(mia[i]) != 0){
+			dynamic_cast<Guerrero*>(mia[i])->atacar(atacada);
+		}
+	}
 }

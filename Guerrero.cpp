@@ -8,3 +8,5 @@ void Guerrero::setAtaque(int ataque){
 int Guerrero::getAtaque(){
 	return ataque;
 }
+void Guerrero::atacar(vector<Habitantes*>& atacada){
+}

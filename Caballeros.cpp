@@ -7,5 +7,5 @@ Caballeros::Caballeros():Guerrero(10)
 Caballeros::~Caballeros()
 {
 }
-void Caballeros::atacar(){
+void Caballeros::atacar(vector<Habitantes*>& atacada){
 }
