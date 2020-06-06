@@ -268,14 +268,17 @@ void guerra(vector<Habitantes*>& mia,vector<Habitantes*>& atacada){
 	  int j = 0 + rand()%(atacada.size()-1);
 	for(int i = 0; i < mia.size() ; i++){
 		if(dynamic_cast<Guerrero*>(mia[i]) != 0){
+			cout << "fsd" << endl;
 			dynamic_cast<Guerrero*>(mia[i])->atacar(atacada[j]);
-			if(atacada[j] <=0){
+			if(atacada[j]->getVida() <=0){
+				cout <<"ds" << endl;
 				atacada.erase(atacada.begin() + j);
 			}else{
 				if(dynamic_cast<Guerrero*>(atacada[j]) != 0){
+					cout << "sdasd";
 					dynamic_cast<Guerrero*>(atacada[j])->atacar(mia[i]);
 				}
-				if(mia[i] <=0){
+				if(mia[i]->getVida() <=0){
 					mia.erase(mia.begin() + i);
 				}
 			}
