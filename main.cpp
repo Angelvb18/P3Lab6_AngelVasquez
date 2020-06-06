@@ -231,7 +231,7 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 					hcaballero =0;
 				}
 				if(harquero == 4){
-					harquero++;
+					harquero=0;
 				}
 				cout << "Alimento:" << Lista[posicion]->getAlimento() << "\nOro:"<<Lista[posicion]->getOro() << "\nMadera:" << Lista[posicion]->getMadera() << endl;
 				cout << "Numero de Habitantes:" << Lista[posicion]->getNumeroHabitantes() << endl;
@@ -246,7 +246,7 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 					cout << "Para crear un Caballeros faltan " << 4-hcaballero<<" Horas"<< endl; 
 				}
 				if(preJinetes.size() != 0){
-					cout << "Para crear un Arquero Jinete" << 6-harquero<<" Horas"<< endl;
+					cout << "Para crear un  Jinete" << 6-hjinete<<" Horas"<< endl;
 				}
 				break;
 				
