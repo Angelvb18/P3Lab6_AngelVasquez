@@ -140,7 +140,7 @@ void menu(int posicion , vector<Civilizacion*>& Lista){
 					cout << "Ingrese a que civilizacion va a ataca:";
 					cin >> posiataque;
 					}while(posiataque > Lista.size() || posiataque < 0);
-					guerra(Lista[posicion]->getHabitantes(),Lista[posicion]->getHabitantes());
+					guerra(Lista[posicion]->getHabitantes(),Lista[posiataque]->getHabitantes());
 					if(Lista[posicion]->getHabitantes().size() ==0){
 						cout << "Usted a perdido" << endl;
 							Lista[posicion]->setOro(Lista[posicion]->getOro()-20);
